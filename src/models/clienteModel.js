@@ -39,6 +39,27 @@ const clienteModel={
 
     },
 
+    buscarPorEmail: async (emailCliente)=>{
+
+        try {
+            const pool = await getConnection();
+
+            let querySQL ="SELECT * FROM Clientes WHERE emailCliente = @emailCliente";
+
+            const result = await pool.request()
+                .input('emailCliente', sql.VarChar(200), emailCliente)
+                .query(querySQL);
+            
+            return result.recordset;
+
+
+        } catch (error) {
+            console.error("Erro ao buscar Cliente:", error);
+            throw error;
+        }
+
+    },
+
     inserirCliente: async (nomeCliente, cpfCliente, emailCliente, senhaCliente)=>{
         try {
             
