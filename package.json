@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
@@ -27,6 +28,5 @@
     "url": "https://github.com/JoaoAlves0019/S3_R5-AT1/issues"
   },
   "homepage": "https://github.com/JoaoAlves0019/S3_R5-AT1#readme",
-  "devDependencies": {},
   "description": ""
 }

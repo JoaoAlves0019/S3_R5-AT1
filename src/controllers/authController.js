@@ -36,6 +36,13 @@ const authController = {
                 expiresIn: process.env.JWT_EXPIRES_IN
                });
 
+               res.cookie("token", token, {
+                httpOnly: true,
+                secure: false,
+                sameSite: "strict",
+                maxAge: Number(process.env.JWT_TIME_EXPIRES_IN)
+               });
+
                res.status(200).json({
                 message: "Logado com sucesso!",
                 token

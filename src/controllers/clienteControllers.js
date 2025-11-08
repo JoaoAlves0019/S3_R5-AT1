@@ -50,7 +50,7 @@ const clienteController ={
 
             if (clientes.length > 0 ) {
                 return res.status(409).json({erro: 'CPF já cadastrado!'})
-            }
+            }   
 
             const saltRounds = 10;
             const senhaHash = bcrypt.hashSync(senhaCliente, saltRounds);
